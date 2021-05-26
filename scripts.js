@@ -1,7 +1,7 @@
 // Set up SW
 if ('serviceWorker' in navigator) {
 	window.addEventListener('load', function () {
-		navigator.serviceWorker.register('/pwa-auto-otp-demo/sw.js').then(
+		navigator.serviceWorker.register('/pwa-auto-otp-demo/sw.js', { scope: '/pwa-auto-otp-demo/' }).then(
 			function (registration) {
 				// Registration was successful
 				console.log(
@@ -20,12 +20,14 @@ if ('serviceWorker' in navigator) {
 // Set up WebOTP
 const form = document.querySelector('form');
 const input = form.querySelector('input[autocomplete="one-time-code"]');
+const errors = form.querySelector('.errors');
+const status = form.querySelector('.status');
 if ('OTPCredential' in window) {
 	window.addEventListener('DOMContentLoaded', e => {
 		const ac = new AbortController();
         form.addEventListener('submit', e => {
             ac.abort();
-            console.log('submitting form');
+            status.innerText = 'Form submitted';
         });
 		navigator.credentials
 			.get({
@@ -40,4 +42,6 @@ if ('OTPCredential' in window) {
 				console.log(err);
 			});
 	});
+} else {
+    errors.innerText = 'Your browser does not support WebOTP';
 }

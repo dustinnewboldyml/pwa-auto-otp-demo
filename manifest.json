@@ -1,7 +1,7 @@
 {
     "name": "PWA OTP Demo",
     "short_name": "pwa-otp-demo",
-    "start_url": "/pwa-auto-otp-demo",
+    "start_url": "/pwa-auto-otp-demo/",
     "icons": [
         {
             "src": "/pwa-auto-otp-demo/assets/logo200.png",
