@@ -1,3 +1,5 @@
+// #sw 5/26/2021 11:18am
+
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = ['/pwa-auto-otp-demo', '/pwa-auto-otp-demo/styles.css', '/pwa-auto-otp-demo/scripts.js'];
 
