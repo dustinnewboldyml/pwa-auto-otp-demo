@@ -1,5 +1,5 @@
 var CACHE_NAME = 'my-site-cache-v1';
-var urlsToCache = ['/', '/styles.css', '/scripts.js'];
+var urlsToCache = ['/pwa-auto-otp-demo', '/pwa-auto-otp-demo/styles.css', '/pwa-auto-otp-demo/scripts.js'];
 
 self.addEventListener('install', event => {
 	// Perform install steps
